@@ -31,9 +31,8 @@ These are the only (fairly standard) predefined words currently available:
 - `.s`
 
 In addition you may use `pause` to temporarily exit out into the PicoLisp REPL, assuming you started
-this foth.l as recommended. You may then get back
-into the same `+Forth` object again doing `(resume)`. The other special word is `bye`, which exits out
-into the shell.
+this forth.l as recommended. You may then get back into the same `+Forth` object again doing `(resume)`.
+The other special word is `bye`, which exits out into the shell.
 
 To define a new word, you use a sequence of words or numbers starting with a `:` and ending with a `;`,
 where the first word after the `:` is the name of the new word. In this implementation you may also
@@ -51,7 +50,7 @@ The patterns are:
 - `do` token1 ... `loop`
 
 Some other Forth implementations doesn't allow if-else-then and do-loop to be used outside word definition
-blocks, but with this implementation you can do that.
+blocks, but with this implementation you may do that.
 
 The three patterns mentioned above are implemented as classes (`+DefineWord`, `+IfElseThen`, `+DoLoop`).
 As subclasses of `+WordBlock` they are instantiated and executed in similar ways: When the first
@@ -60,7 +59,7 @@ Subsequent tokens are then fed to this object, until the closing keyword is rece
 is not part/child of an enclosing pattern object, then the `execute>` method of the object will be
 called.
 
-Example: When we, in the Forth REPL, enter the line defining the `fac` word above,
+Example: When we, in this Forth REPL, enter the line defining the `fac` word above,
 the `execute>` method of the `+IfElseThen` will not be called when the `then` word arrives, since that
 object is part of another pattern, but the `execute>` method of the `+DefineWord` will be called,
 meaning that the new word will be defined (but not executed).
