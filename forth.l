@@ -1,4 +1,6 @@
-# 24aug16jk
+#!/usr/bin/picolisp /usr/lib/picolisp/lib.l
+
+# The paths above assumes a "global installation" of PicoLisp.
 
 (de wordMsgSym (Token)
 	(intern (pack "_" Token"_")) )
@@ -147,7 +149,7 @@
 	(println (or (reverse (: dStack)) "empty")) )
 
 (dm _t_ ()		# just for testing
-	(prinl "tempStack: " (: tempStack)) )
+	(prin "tempStack: ") (println (: tempStack)) )
 
 ### end of class +Forth
 
