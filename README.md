@@ -69,3 +69,9 @@ At the end of the forth.l file there are a couple of references to `*EMUENV`, an
 doesn't work with EmuLisp.
 
 Enjoy!
+
+---
+
+PS. Another, quite different, implementation of Forth in PicoLisp can be found here:
+
+[http://software-lab.de/forth.l](http://software-lab.de/forth.l)
